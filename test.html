@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="./node_modules/echarts/dist/echarts.min.js"></script>
+    <script src="./node_modules/echarts-gl/dist/echarts-gl.min.js"></script>
+    <script type="text/javascript" src="src/map/china.js"></script>
+    <style>
+        #main {
+            width: 800px;
+            height: 600px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="main">
+
+    </div>
+    <script type="text/javascript">
+        // 基于准备好的dom，初始化echarts实例
+        var myChart = echarts.init(document.getElementById('main'));
+
+        // 指定图表的配置项和数据
+        var option = {
+            backgroundColor: '#000',
+            title: {
+                text: '10000000 GPS Points',
+                left: 'center',
+                textStyle: {
+                    color: '#fff'
+                }
+            },
+            geo: {
+                map: 'china',
+                roam: true,
+                label: {
+                    emphasis: {
+                        show: false
+                    }
+                },
+                silent: true,
+                itemStyle: {
+                    normal: {
+                        areaColor: '#323c48',
+                        borderColor: '#111'
+                    },
+                    emphasis: {
+                        areaColor: '#2a333d'
+                    }
+                }
+            },
+            series: [{
+                name: '弱',
+                type: 'scatterGL',
+                progressive: 1e6,
+                coordinateSystem: 'geo',
+                symbolSize: 1,
+                zoomScale: 0.002,
+                blendMode: 'lighter',
+                large: true,
+                itemStyle: {
+                    color: 'rgb(20, 15, 2)'
+                },
+                postEffect: {
+                    enable: true
+                },
+                silent: true,
+                dimensions: ['lng', 'lat'],
+                data: new Float32Array()
+            }]
+        }
+
+        // 使用刚指定的配置项和数据显示图表。
+        myChart.setOption(option);
+    </script>
+
+</body>
+
+</html>
