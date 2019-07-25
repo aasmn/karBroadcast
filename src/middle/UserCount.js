@@ -11,10 +11,10 @@ class UserNumberFq extends Component {
         setInterval(() => {
             this.setState((preState) => {
                 return {
-                    number: preState.number + getRandom(1, 10)
+                    number: preState.number + getRandom(0, 3)
                 }
             })
-        }, 1000)
+        }, 30000)
     }
     render() {
         const arr = this.state.number.toString().split('')
@@ -45,10 +45,10 @@ class UserNumber extends Component {
         setInterval(() => {
             this.setState((preState) => {
                 return {
-                    number: preState.number + getRandom(1, 10)
+                    number: preState.number + getRandom(0, 3)
                 }
             })
-        }, 5000)
+        }, 30000)
     }
     render() {
         const numberStr = formatNum(this.state.number)
@@ -65,10 +65,10 @@ class DeviceNumber extends Component {
         setInterval(() => {
             this.setState((preState) => {
                 return {
-                    number: preState.number + getRandom(1, 9)
+                    number: preState.number + getRandom(100,150)
                 }
             })
-        }, 500)
+        }, 1000)
     }
     render() {
         const numberStr = formatNum(this.state.number)
