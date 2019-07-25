@@ -8,12 +8,12 @@ self.__precacheManifest = [
     "url": "/static/media/female.8cdd840b.svg"
   },
   {
-    "revision": "abdcc1420cb1ea4ae463175708ba119b",
-    "url": "/static/media/childgirl.abdcc142.svg"
+    "revision": "5166cdd28a959c1c56dfba3fb60108e5",
+    "url": "/static/media/childgirl.5166cdd2.svg"
   },
   {
-    "revision": "704089bed1d6ac75ea6d111bbfdd070b",
-    "url": "/static/media/childboy.704089be.svg"
+    "revision": "f403a58a79b0033de2be0cb6e75da4a2",
+    "url": "/static/media/childboy.f403a58a.svg"
   },
   {
     "revision": "264f9e4e7cec5d337ad6ef15b63feb7e",
@@ -24,19 +24,19 @@ self.__precacheManifest = [
     "url": "/static/js/runtime~main.a8a9905a.js"
   },
   {
-    "revision": "2312b328dc28c7434039",
-    "url": "/static/js/main.6f60d60d.chunk.js"
+    "revision": "90a5e4f8a39e26ba8665",
+    "url": "/static/js/main.5dec6ca8.chunk.js"
   },
   {
     "revision": "197a150185680fd55bc1",
     "url": "/static/js/2.097bf598.chunk.js"
   },
   {
-    "revision": "2312b328dc28c7434039",
+    "revision": "90a5e4f8a39e26ba8665",
     "url": "/static/css/main.6a383031.chunk.css"
   },
   {
-    "revision": "d3af98eaccf70e06a4d1c3ae6d046e82",
+    "revision": "5677f27d751b76d925d20759f02e7a28",
     "url": "/index.html"
   }
 ];

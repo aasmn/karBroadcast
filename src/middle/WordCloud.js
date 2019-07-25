@@ -10,14 +10,20 @@ function insertWord(el, word) {
     var that = document.createElement('div')
     that.className = 'word';
     let top = getRandom(5, 220)
-    let left = getRandom(0, 7)
-    let fontSize = getRandom(14, 32)
+    let left = getRandom(0, 5)
+    let fontSize = getRandom(14, 36)
+    if (fontSize > 22 && word.length >= 4) {
+        fontSize = fontSize - word.length * 2
+    }
+    if (fontSize < 22 && word.length < 4) {
+        fontSize = fontSize + word.length * 3
+    }
     that.style.top = top + 'px'
     that.style.fontSize = fontSize + 'px'
     that.style.animation = 'word-bullet-' + left + ' 5s'
     that.innerHTML = word
     const pos = _.find(showList, (val, key) => {
-        return val.left === left && Math.abs(val.top - top) < 30
+        return val.left === left && Math.abs(val.top - top) < 40
     })
     if (pos) return;
     el.appendChild(that)
@@ -39,7 +45,7 @@ function pushWord(el, wordList) {
     }
     setTimeout(() => {
         pushWord(el, wordList)
-    }, getRandom(10, 100))
+    }, 30)
 }
 
 function renderChart1(el) {
@@ -63,7 +69,7 @@ class Main extends Component {
                     <div className="chart-label">实时语音交互</div>
                 </div>
                 <div className="chart borders" style={{ height: 245, width: '100%', margin: '10px 0' }}>
-                    <div className="word-run" ref={e => this.el = e} style={{ height: 245, width: '100%', overflow: 'hidden', position:'relative' }}></div>
+                    <div className="word-run" ref={e => this.el = e} style={{ height: 245, width: '100%', overflow: 'hidden', position: 'relative' }}></div>
                 </div>
             </div>
         );

@@ -18,7 +18,7 @@ function getOption() {
         grid: {
             top: 20,
             left: 65,
-            right: 30,
+            right: 40,
             bottom: 60
         },
         xAxis: {
@@ -26,7 +26,7 @@ function getOption() {
             type: 'category',
             nameTextStyle: {
                 color: '#1b9fd1',
-                fontSize: window.fontSize_axis
+                fontSize: 12
             },
             ...window.axisSetting,
             axisLine: {

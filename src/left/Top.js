@@ -131,7 +131,7 @@ class Main extends Component {
         return (
             <div className="left-top">
                 <div className="chart-title">
-                    <div className="chart-label">近一周日活和调用量</div>
+                    <div className="chart-label">机器人活跃量</div>
                 </div>
                 <div className="chart borders" ref={e => this.el = e} style={{ height: 225, width: '100%', margin: '10px 0' }}>
 

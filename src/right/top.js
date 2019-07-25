@@ -70,7 +70,7 @@ class Main extends Component {
                     title: preState.title === '家长' ? '宝宝' : '家长'
                 }
             })
-        }, 5000)
+        }, 10000)
     }
     render() {
         const ageData = ["23-29岁", "30-34岁", "35-39岁", "40-49岁", "50岁以上"]

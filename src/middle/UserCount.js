@@ -48,7 +48,7 @@ class UserNumber extends Component {
                     number: preState.number + getRandom(1, 10)
                 }
             })
-        }, 1000)
+        }, 5000)
     }
     render() {
         const numberStr = formatNum(this.state.number)
