@@ -11,7 +11,7 @@ function insertWord(el, word) {
     that.className = 'word';
     let top = getRandom(5, 220)
     let left = getRandom(0, 7)
-    let fontSize = getRandom(14, 22)
+    let fontSize = getRandom(14, 32)
     that.style.top = top + 'px'
     that.style.fontSize = fontSize + 'px'
     that.style.animation = 'word-bullet-' + left + ' 5s'
@@ -62,8 +62,8 @@ class Main extends Component {
                 <div className="chart-title">
                     <div className="chart-label">实时语音交互</div>
                 </div>
-                <div className="chart borders word-run" ref={e => this.el = e} style={{ height: 245, width: '100%', margin: '10px 0' }}>
-
+                <div className="chart borders" style={{ height: 245, width: '100%', margin: '10px 0' }}>
+                    <div className="word-run" ref={e => this.el = e} style={{ height: 245, width: '100%', overflow: 'hidden', position:'relative' }}></div>
                 </div>
             </div>
         );

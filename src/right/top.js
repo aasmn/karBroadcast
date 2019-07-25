@@ -9,8 +9,9 @@ import Progress from '../common/Progress'
 class AgePercent extends Component {
     render() {
         const { age, percent } = this.props.data
+        const className = "age-row " + (this.props.className || '')
         return (
-            <div className="age-row">
+            <div className={className}>
                 <div className="age">{age}</div>
                 <Progress percent={parseFloat(percent)} />
                 <div className="percent">{percent}</div>
@@ -23,8 +24,9 @@ class Body extends Component {
         const { mpercent, fpercent, data, left, ischild } = this.props
         const imgFemale = ischild ? childgirl : female
         const imgMale = ischild ? childboy : male
+        const className = data.length === 3 ? 'more-margin' : ''
         return (
-            <div className="body" style={{ height: '100%', left }}>
+            <div className="body" style={{ height: '100%',left }}>
                 <div className="inner-left">
                     <div className="title">性别占比</div>
                     <div className="person">
@@ -41,8 +43,11 @@ class Body extends Component {
                 </div>
                 <div className="inner-right">
                     <div className="title">用户年龄分布</div>
-                    {data.map(item => {
-                        return (<AgePercent key={item.age} data={item} />)
+                    {data.map((item, index) => {
+                        if (index === 0)
+                            return (<AgePercent key={item.age} data={item} />)
+                        else
+                            return (<AgePercent className={className} key={item.age} data={item} />)
                     })}
                 </div>
             </div>
@@ -77,7 +82,7 @@ class Main extends Component {
             }
         })
         const babyAageData = ["0-6岁", "7岁-14岁", "14岁以上"]
-        const babyPercent = ["64.41", "29.75", "5.83"]
+        const babyPercent = ["64.41%", "29.75%", "5.83%"]
         const babyData = babyAageData.map((age, index) => {
             return {
                 age,
