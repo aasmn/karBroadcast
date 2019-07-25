@@ -90,7 +90,7 @@ class Main extends Component {
         return (
             <div className="left-top">
                 <div className="chart-title">
-                    <div className="chart-label"> Skill当日访问用户量</div>
+                    <div className="chart-label">Skill访问排行</div>
                 </div>
                 <div className="chart borders" ref={e => this.el = e} style={{ height: 185, width: '100%', margin: '10px 0' }}>
 

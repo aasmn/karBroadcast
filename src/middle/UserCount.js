@@ -65,10 +65,10 @@ class DeviceNumber extends Component {
         setInterval(() => {
             this.setState((preState) => {
                 return {
-                    number: preState.number + getRandom(1, 3)
+                    number: preState.number + getRandom(1, 9)
                 }
             })
-        }, 100)
+        }, 500)
     }
     render() {
         const numberStr = formatNum(this.state.number)
