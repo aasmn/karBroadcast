@@ -59,13 +59,13 @@ class UserNumber extends Component {
 }
 class DeviceNumber extends Component {
     state = {
-        number: 3978061615
+        number: 7458865528
     }
     componentDidMount() {
         setInterval(() => {
             this.setState((preState) => {
                 return {
-                    number: preState.number + getRandom(5,20)
+                    number: preState.number + getRandom(20,30)
                 }
             })
         }, 100)

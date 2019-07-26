@@ -92,13 +92,13 @@ class Main extends Component {
             number: "32.71%"
         }, {
             label: '日均使用时长',
-            number: "68min"
+            number: "53min"
         }, {
             label: '日均对话次数',
-            number: '4.8次'
+            number: '3.2次'
         }, {
             label: '平均交互轮数',
-            number: '12.7'
+            number: '8.82轮'
         }]
         return (
             <div className="rmf">

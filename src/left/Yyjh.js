@@ -77,13 +77,13 @@ function getCityData(myChart) {
     myChart.setOption(option);
     setInterval(() => {
         let index = getRandom(0, data.length - 1)
-        data[index].value = data[index].value * getRandom(9, 11) / 10
+        data[index].value = data[index].value * getRandom(95, 105) / 100
         if (Math.abs(orgData[index].value - data[index].value) > 5) {
-            data[index].value = data[index].value + orgData[index].value > data[index].value ? 5 : -5
+            data[index].value = data[index].value + (orgData[index].value > data[index].value ? 5 : -5)
         }
         myChart.setOption(option);
 
-    }, 5000)
+    }, 10000)
 }
 
 class Frag extends Component {
@@ -107,10 +107,10 @@ class Main extends Component {
 
         const fragData = [{
             label: '问答次数',
-            number: 5784670
+            number: 7117495
         }, {
             label: '平均交互轮数',
-            number: 9.56
+            number: 8.23
         }]
         return (
             <div className="yyjh">
