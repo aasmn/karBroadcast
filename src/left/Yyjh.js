@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import echarts from 'echarts'
+import _ from 'lodash'
 function getOption() {
     return {
         title: {
@@ -54,12 +55,15 @@ function getOption() {
                 }
             },
             labelLine: {
-                lineStyle:{
+                lineStyle: {
                     color: '#aaa'
                 }
             }
         }]
     };
+}
+function getRandom(min, max) {
+    return min + Math.round(Math.random() * (max - min))
 }
 function getCityData(myChart) {
     const data = window.dataPool.yyjhData
@@ -68,8 +72,18 @@ function getCityData(myChart) {
         return;
     };
     var option = getOption();
-    option.series[0].data = data
+    option.series[0].data = data;
+    const orgData = _.cloneDeep(data)
     myChart.setOption(option);
+    setInterval(() => {
+        let index = getRandom(0, data.length - 1)
+        data[index].value = data[index].value * getRandom(9, 11) / 10
+        if (Math.abs(orgData[index].value - data[index].value) > 10) {
+            data[index].value = data[index].value + orgData[index].value > data[index].value ? 10 : -10
+        }
+        myChart.setOption(option);
+
+    }, 5000)
 }
 
 class Frag extends Component {
@@ -90,12 +104,11 @@ class Main extends Component {
         getCityData(myChart)
     }
     render() {
-        const percents = [61.82, 31.73, 6.45]
-        const labels = ['一般', '心情开心', '心情难过']
-        const fragData = [ {
+
+        const fragData = [{
             label: '问答次数',
             number: 5784670
-        },  {
+        }, {
             label: '平均交互轮数',
             number: 9.56
         }]

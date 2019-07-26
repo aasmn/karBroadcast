@@ -9,15 +9,16 @@ function getRandom(min, max) {
 function insertWord(el, word) {
     var that = document.createElement('div')
     that.className = 'word';
-    let top = getRandom(5, 220)
     let left = getRandom(0, 5)
     let fontSize = getRandom(14, 36)
+
     if (fontSize > 22 && word.length >= 4) {
         fontSize = fontSize - word.length * 2
     }
     if (fontSize < 22 && word.length < 4) {
         fontSize = fontSize + word.length * 3
     }
+    let top = getRandom(5, 240 - fontSize)
     that.style.top = top + 'px'
     that.style.fontSize = fontSize + 'px'
     that.style.animation = 'word-bullet-' + left + ' 5s'
@@ -45,7 +46,7 @@ function pushWord(el, wordList) {
     }
     setTimeout(() => {
         pushWord(el, wordList)
-    }, 30)
+    }, getRandom(10, 50))
 }
 
 function renderChart1(el) {
