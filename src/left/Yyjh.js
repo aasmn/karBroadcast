@@ -78,8 +78,8 @@ function getCityData(myChart) {
     setInterval(() => {
         let index = getRandom(0, data.length - 1)
         data[index].value = data[index].value * getRandom(9, 11) / 10
-        if (Math.abs(orgData[index].value - data[index].value) > 10) {
-            data[index].value = data[index].value + orgData[index].value > data[index].value ? 10 : -10
+        if (Math.abs(orgData[index].value - data[index].value) > 5) {
+            data[index].value = data[index].value + orgData[index].value > data[index].value ? 5 : -5
         }
         myChart.setOption(option);
 
@@ -115,7 +115,7 @@ class Main extends Component {
         return (
             <div className="yyjh">
                 <div className="chart-title">
-                    <div className="chart-label">语用交互模型</div>
+                    <div className="chart-label">语音声纹情绪分析</div>
                 </div>
                 <div className="chart borders" style={{ height: 182, width: '100%', margin: '10px 0' }}>
                     <div className="inner-left" >

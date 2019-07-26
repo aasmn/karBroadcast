@@ -18,7 +18,7 @@ function insertWord(el, word) {
     if (fontSize < 22 && word.length < 4) {
         fontSize = fontSize + word.length * 3
     }
-    let top = getRandom(5, 240 - fontSize)
+    let top = getRandom(5, 235 - fontSize)
     that.style.top = top + 'px'
     that.style.fontSize = fontSize + 'px'
     that.style.animation = 'word-bullet-' + left + ' 5s'
