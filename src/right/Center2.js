@@ -1,5 +1,9 @@
 import React, { Component } from 'react';
 import echarts from 'echarts'
+function formatNum(num) {
+    var reg = /\d{1,3}(?=(\d{3})+$)/g;
+    return (num + '').replace(reg, '$&,');
+}
 function getOption() {
     return {
         title: {
@@ -59,6 +63,10 @@ function getOption() {
                     color(item) {
                         var colorMap = ['#ffff5a', '#f5f7ea', '#ffd978', '#fff', '#fff'].reverse()
                         return colorMap[item.dataIndex] || '#fff'
+                    },
+                    formatter: function (value, index) {
+                        console.log('formatter', value)
+                        return formatNum(value.data)
                     }
                 }
             },

@@ -18,7 +18,6 @@ window.dataPool.leftTop = (function () {
         dayData: dayData.reverse(),
         callData: callData.reverse()
     }
-
 })()
 window.dataPool.leftCenter = (function () {
     const yData = ["成语接龙", "诗词接龙", "猜儿歌", " 猜数字", "猜动物"];

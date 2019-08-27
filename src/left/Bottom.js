@@ -17,10 +17,7 @@ function getOption() {
             show: false
         },
         tooltip: {
-            trigger: 'axis',
-            axisPointer: {
-                type: 'shadow'
-            }
+            show: true
         },
         grid: {
             top: 20,

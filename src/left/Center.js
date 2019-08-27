@@ -1,5 +1,9 @@
 import React, { Component } from 'react';
 import echarts from 'echarts'
+function formatNum(num) {
+    var reg = /\d{1,3}(?=(\d{3})+$)/g;
+    return (num + '').replace(reg, '$&,');
+}
 function getOption() {
     return {
         title: {
@@ -23,7 +27,7 @@ function getOption() {
                 show: false
             },
             axisLabel: {
-                show: false
+                show: false,
             },
             axisLine: {
                 show: false
@@ -56,7 +60,11 @@ function getOption() {
                 normal: {
                     position: 'right',
                     show: true,
-                    color: '#fff'
+                    color: '#fff',
+                    formatter: function (value, index) {
+                        console.log('formatter', value)
+                        return formatNum(value.data)
+                    }
                 }
             },
             barWidth: 15,
