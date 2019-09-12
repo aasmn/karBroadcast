@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+
+<head>
+    <style>
+        .right {
+            color: red;
+        }
+    </style>
+</head>
+
+<body>
+    <pre>
+    第2题 得分：1
+    语音识别的简称是？
+    A. ASR <span class="right">正确</span>
+    B. CALL
+    C. KWS
+    D. VPR
+    第3题 得分：1
+    语音识别结果中插入错误很高，最可能的情况是？
+    A. 空语音
+    B. 语音中有背景人声 <span class="right">正确</span>
+    C. 引擎版本号不对
+    D. 语音的能量太小
+    第4题 得分：1
+    以下哪种情境对语音识别来说最难？
+    A. 近距离，安静，标准口音
+    B. 远距离，安静，轻微口音
+    C. 近距离，噪声，轻微口音
+    D. 远距离，噪声，轻微口音 <span class="right">正确</span>
+    第5题 得分：0
+    提禅道任务，要求优化语音识别效果时，不需要提供？
+    A. 引擎版本号 错误
+    B. 语音识别效果不好的 demo 或产品 <span class="right">正确</span>
+    C. 错误的基本流程和情况
+    D. 少量出问题的语音样例
+    第6题 得分：1
+    关于ASR，字错误率不包含以下哪一种错误？
+    A. 删除错误
+    B. 插入错误
+    C. 标注错误 <span class="right">正确</span>
+    D. 替换错误
+    第7题 得分：1
+    工作量最大的语音识别优化是？
+    A. 语言模型适配
+    B. 声学模型适配 <span class="right">正确</span>
+    C. 配置特定句式和词典
+    D. 调整语音识别解码器参数
+    第8题 得分：1
+    远讲场景语音识别难度较大，以下哪个说法有错误？
+    A. 距离远时，采集到的语音信号自身能量低
+    B. 相比近距离，更容易受到房间内各种噪声的干扰
+    C. 远距离识别超过了目前语音识别的能力范畴 <span class="right">正确</span>
+    D. 房间中，声音遇到墙壁等阻碍物会形成反射，形成混响
+    第9题 得分：0
+    关于当前的语音识别公有云，以下说法错误的是？
+    A. 引擎会返回多种可能的文字识别结果，供产品或开发人员进行选择 <span class="right">正确</span>
+    B. 引擎返回的识别结果中，除了识别出的文字结果，还包括配置参数，语音/静音情况，词边界等富文本信息
+    C. 语言领域可以最多选择 5 个，比如车载设备的通用，导航，音乐，有声读物，个性化 错误
+    D. 当前引擎对于快语速，重口音等极端情况，识别效果不佳
+    第10题 得分：1
+    以下不会明显影响语音识别结果的是？
+    A. 语音的质量
+    B. 服务器 CPU 的型号 <span class="right">正确</span>
+    C. 声学模型的类别
+    D. 语言模型的类别
+    第11题 得分：1
+    关于ASR，以下说法<span class="right">正确</span>的是？
+    A. 压缩比高低对音频质量没有直接影响，不会影响ASR性能；
+    B. 个性化数据匹配度对ASR性能没什么影响；
+    C. 语言模型匹配度与ASR性能无直接关系；
+    D. 个性化数据生效范围: 全局级别、场景级别、AppKey级别(产品级别)、设备级别； <span class="right">正确</span>
+    第12题 得分：1
+    TTS 的含义是？
+    A. 将语音转换成文字，让电脑能听懂
+    B. 对输入文本进行语言学的分析
+    C. 将文字转换成语音，让电脑会说话 <span class="right">正确</span>
+    D. 输入包含关键词的语音，对设备进行唤醒
+    第13题 得分：0
+    下面哪些是 TTS 的评价手段？
+    A. MOS 打分 <span class="right">正确</span>
+    B. ABX 打分（倾向性测听） <span class="right">正确</span>
+    C. <span class="right">正确</span>率
+    D. 召回率
+    第14题 得分：1
+    TTS ABX 倾向性评测含义是？
+    A. 测听者测听语音，评判合成语音是否可以听懂
+    B. 测听者对语音进行主观意见的打分
+    C. 测听者对比两组语音，给出更偏向于哪组语音的意见 <span class="right">正确</span>
+    D. 测听者测听语音，计算<span class="right">正确</span>合成的字数与总的字数的比例
+    第15题 得分：1
+    下面哪些会影响 TTS 的效果表现？
+    A. 发音人音色 <span class="right">正确</span>
+    B. 技术路线的代数（G1/G2/G3） <span class="right">正确</span>
+    C. 合成模型的训练环境
+    D. 合成模型的运行时长
+    第16题 得分：1
+    TTS 实时率的计算公式是？
+    A. 引擎处理所耗时长 / 合成语音时长 <span class="right">正确</span>
+    B. 合成语音时长 / 引擎处理所耗时长
+    C. 合成的句数 / 总句数
+    D. 引擎获取待合成文本到合成结束的时间差
+    第17题 得分：1
+    TTS 首帧返回时间的含义是？
+    A. 终端设备收到第一个音频包时间点与终端完成语音识别的时间差
+    B. 终端设备收到最后一个音频包时间点与终端开始发送文本时间点的时间差
+    C. 终端设备收到第一个音频包时间点与终端开始发送文本时间点的时间差 <span class="right">正确</span>
+    D. 终端设备收到第一个音频包时间点与 NLU 完成文本生成的时间差
+    第18题 得分：0
+    TTS 在线合成引擎支持下面哪些调整？
+    A. 语音的亮度 <span class="right">正确</span>
+    B. 语音的速度 <span class="right">正确</span>
+    C. 语音的音量 <span class="right">正确</span>
+    D. 语音的音调 <span class="right">正确</span>
+    第19题 得分：1
+    关于声纹识别，下列说法<span class="right">正确</span>的是？
+    A. 声纹识别能通过说话人语音，识别说话人身份 <span class="right">正确</span>
+    B. 声纹识别能通过说话人语音，识别说话人说话内容
+    C. 声纹识别能通过说话人语音，判断说话人性别
+    D. 声纹识别能通过说话人语音，判断说话人的情感状态
+    第20题 得分：1
+    声纹识别性能指标——集内辨认准确率计算公式是？
+    A. 冒认语音做测试时被判断为真的次数 / 用冒认语音做测试的总次数
+    B. 目标说话人语音做测试时被判断为假的次数 / 目标说话人语音做测试的总次数
+    C. 测试语音属于目标说话人集合中的说话人且识别结果<span class="right">正确</span>的次数 / 测试语音属于目标说话人集合的测试总次数 <span class="right">正确</span>
+    D. 测试语音不属于目标说话人集合中的说话人且识别结果<span class="right">正确</span>的次数 / 测试语音不属于目标说话人集合的测试总次数
+    第21题 得分：1
+    关于声纹识别，下列说法<span class="right">正确</span>的是？
+    A. 信噪比越高声纹识别性能越好 <span class="right">正确</span>
+    B. 信噪比越低声纹识别性能越好
+    C. 口音不会对声纹识别性能造成影响
+    D. 口音会对声纹识别性能造成影响 <span class="right">正确</span>
+    第22题 得分：1
+    关于声纹识别，下列说法<span class="right">正确</span>的是？
+    A. 说话人刻意改变音调不会对声纹识别性能造成影响
+    B. 说话人刻意改变音调会对声纹识别性能造成影响 <span class="right">正确</span>
+    C. 说话人因感冒导致音色改变不会对声纹识别性能造成影响
+    D. 说话人因感冒导致音色改变会对声纹识别性能造成影响 <span class="right">正确</span>
+    第23题 得分：1
+    下列关于声纹识别引擎实时率说法<span class="right">正确</span>的是？
+    A. CPU 性能直接影响引擎实时率 <span class="right">正确</span>
+    B. 引擎实时率只和引擎本身相关，和 CPU 性能无关
+    C. 引擎实时率数值越小表示引擎处理能力越强 <span class="right">正确</span>
+    D. 引擎实时率数值越大表示引擎处理能力越强
+    第24题 得分：1
+    声纹识别简称是？
+    A. ASR
+    B. NLP
+    C. VPR <span class="right">正确</span>
+    D. TTS
+    第25题 得分：1
+    关于声纹识别，下列说法<span class="right">正确</span>的是？
+    A. 说话人离 mic 距离不会影响声纹识别性能
+    B. 不同的房间和混响值不会影响声纹识别性能
+    C. 说话人距离 mic 越远则声纹识别性能越差 <span class="right">正确</span>
+    D. 说话人正对 mic、侧对 mic 或背对 mic 对声纹识别性能没有影响
+    第26题 得分：1
+    关于Speaker，下列说法<span class="right">正确</span>的是？
+    A. mic 品质不会对用户声音画像识别性能造成影响
+    B. mic 品质会对用户声音画像识别性能造成影响 <span class="right">正确</span>
+    C. 当 mic 型号相同时，mic 间距会对用户声音画像识别性能造成影响 <span class="right">正确</span>
+    D. 当 mic 型号相同时，mic 间距不会对用户声音画像识别性能造成影响
+    第27题 得分：1
+    关于Speaker，下列说法<span class="right">正确</span>的是？
+    A. 说话人因感冒导致音色改变会对用户声音画像识别性能造成影响 <span class="right">正确</span>
+    B. 说话人因感冒导致音色改变不会对用户声音画像识别性能造成影响
+    C. 说话人刻意改变音调会对用户声音画像识别性能造成影响 <span class="right">正确</span>
+    D. 说话人刻意改变音调不会对用户声音画像识别性能造成影响
+    第28题 得分：1
+    关于Speaker，下列说法<span class="right">正确</span>的是？
+    A. 口音不会对用户声音画像识别性能造成影响
+    B. 口音会对用户声音画像识别性能造成影响 <span class="right">正确</span>
+    C. 信噪比越高用户声音画像识别性能越好 <span class="right">正确</span>
+    D. 信噪比越低用户声音画像识别性能越好
+    第29题 得分：1
+    用户声音画像识别引擎实时率计算公式是？
+    A. 引擎处理时长/语音时长 <span class="right">正确</span>
+    B. 语音时长/引擎处理时长
+    C. 测试类别数目/引擎处理时长
+    D. 测试语音数/引擎处理时长
+    第30题 得分：0
+    NLU、对话、聊天、问答，四个概念之间的关系，下面说法<span class="right">正确</span>的是？
+    A. 聊天机器人是对话机器人的一种，聊天和对话没有区别
+    B. NLU是语义理解的简称。 <span class="right">正确</span>
+    C. 在语音交互类产品上，对话是指人与机器之间的交互，一般特指基于自然语言的人机口语交互。通过交互，最终实现自己的目的：服务、内容、陪伴等。 <span class="right">正确</span>
+    D. 聊天是一个特殊技能(SKILL)，通过对话交互，它主要起陪伴作用 <span class="right">正确</span>
+    E. 问答是另外一个特殊技能(SKILL)，通过问答交互，它能够给用户返回有用的知识，一般这些知识都是客观的信息 <span class="right">正确</span>
+    第31题 得分：1
+    关于提NLU需求的方式，下面哪些做法是<span class="right">正确</span>的？
+    A. 在钉钉上AT到NLU研发人员，并DING一下。
+    B. 提禅道任务给NLU的对应产品接口人 <span class="right">正确</span>
+    C. 在禅道中写明需求功能定义、示例数据、验收标准 <span class="right">正确</span>
+    D. 超过两周工作量的需求，在双方OKR中做对齐 <span class="right">正确</span>
+    E. 客户提的需求，及时反馈给NLU，避免因为个人安排失误导致的客户需求无法按时完成。 <span class="right">正确</span>
+    F. 个例问题提BUG，功能性批量优化提任务需求，两者不混提。 <span class="right">正确</span>
+    第32题 得分：0
+    NLU的F-Score计算公式中，当权重β=0.5时，以下说法<span class="right">正确</span>的是？
+    A. 我们认为召回率对产品体验更重要
+    B. 我们认为精确率对产品体验更重要 <span class="right">正确</span>
+    C. 我们认为精确率和召回率对产品体验同等重要 错误
+    D. 我们认为此时对产品体验来说，召回率比精确率重要2倍
+    第33题 得分：1
+    关于给NLU提BUG，下面哪些做法是<span class="right">正确</span>的？
+    A. 在钉钉上AT到NLU研发人员，并DING一下
+    B. 创建禅道BUG，指派给产品NLU接口人。高优先级BUG，可以钉钉通知该接口人 <span class="right">正确</span>
+    C. 在禅道中用URL描述现场、实际的错误输出结果 <span class="right">正确</span>
+    D. 在禅道中用写明期望结果、期望解决时间 <span class="right">正确</span>
+    E. 需要修复的用例，将用例文本copy到禅道中；必要时一并附上日志文件 <span class="right">正确</span>
+    F. 一个类型的BUG，碰到一个提一个，重复提BUG也没事。
+    G. 同个类型的BUG，提在同一个禅道BUG当中，区分为一类问题或个例问题 <span class="right">正确</span>
+    H. 不同类型的BUG，不混提在同一个禅道BUG中 <span class="right">正确</span>
+    第34题 得分：1
+    关于项目落地中的NLU需求，下面哪些做法是<span class="right">正确</span>的？
+    A. NLU团队需要直接参与项目，无条件的支持短期项目，否则被视为违背“客户第一”公司价值观；
+    B. NLU团队主要为产品线服务，NLU在产品上的工作产出主要由产品经理做验收； <span class="right">正确</span>
+    C. 不鼓励项目经理直接对接NLU团队的研发； <span class="right">正确</span>
+    D. 项目的NLU定制需求，应该由项目团队的人负责，最好是专职实施，可由NLU团队做培训、提供工具； <span class="right">正确</span>
+    第35题 得分：1
+    关于项目落地中的NLU的价值发挥，下面哪些做法是<span class="right">正确</span>的？
+    A. 项目具有不确定性，NLU团队不需要关心项目的任何诉求，坚决不予支持。
+    B. NLU团队主要为产品主线服务，关注产品的中长期价值，并由产品主线衍生出对项目的强大支撑能力； <span class="right">正确</span>
+    C. 产品布局要有前瞻性，对于有可能成长为产品线的项目，负责人要及时组织产品立项，并配备合理的产品组织架构； <span class="right">正确</span>
+    D. 项目交付物的NLU体验评价，由主线产品经理负责，并合理的定义评价体系中的技能权重和优先级； <span class="right">正确</span>
+    E. 项目的定制NLU需求，合理通用部分，鼓励抽象到主线产品上，有产品经理演进成有市场竞争力的主线需求； <span class="right">正确</span>
+    第36题 得分：1
+    关于语义理解体验的评价，下面哪些说法是<span class="right">正确</span>的？
+    A. 语义准确率(NLU Accuracy)是评价一个整个NLU系统的指标； <span class="right">正确</span>
+    B. 语义准确率(NLU Accuracy)是评价NLU系统中某个意图的指标；
+    C. 评价NLU系统中某个意图的体验，可以用精确率和召回率两个指标来评价； <span class="right">正确</span>
+    D. 评价NLU系统中某个意图的体验，可以用F-Score来评价； <span class="right">正确</span>
+    第37题 得分：1
+    关于意图的测评，下面哪些说法是<span class="right">正确</span>的？
+    A. 一个意图的召回率越高，体验越好；
+    B. 一个意图的精确率越高，体验越好；
+    C. F-Score同时兼顾了召回率和精确率，因此，F-Score越高代表NLU的体验越好； <span class="right">正确</span>
+    D. 一个意图的召回率和精确率的重要程度可以不同。家居控制意图的精确率比召回率更重要。因为一旦误召回，会产生比较严重的后果(e.g. 一句话误理解为空调制冷有可能导致用户感冒)； <span class="right">正确</span>
+    第38题 得分：1
+    如果你是一个AI产品经理，如何确保你产品已经上线的NLU功能表现基本稳定，而不出致命错误？
+    A. 提测试需求给测试团队，建立SanityTest，覆盖最基础、重要、不允许出错的功能； <span class="right">正确</span>
+    B. 不需要做SanityTest，NLU服务自然是稳定的，不稳定就追究其负责人的问题。
+    C. 将建立的SanityTest测试集提交平台测试张大康处，以便做线上服务监控； <span class="right">正确</span>
+    D. 将必要的同事加入到SanityTest收件人列表中； <span class="right">正确</span>
+    E. 随时关注邮件，如果有SanityTest测试警告或错误提示，及时观看测试报告。及时与测试和研发沟通测试报告中的预警内容，直至预警解决完毕； <span class="right">正确</span>
+    第39题 得分：1
+    有市场竞争力的产品NLU测评体系，是有哪几部分构成的？
+    A. 主要技能测评盲测报告； <span class="right">正确</span>
+    B. 覆盖所有功能点协议的SanityTest； <span class="right">正确</span>
+    C. 定期做产品日志分析报告，统计各技能的调用分布，并量化主要技能的用户体验； <span class="right">正确</span>
+    D. 一定周期的竞品对比分析报告，包括技能数量、种类、核心技能体验测评； <span class="right">正确</span>
+    E. 测试集具有定期更新机制 <span class="right">正确</span>
+    第40题 得分：1
+    WER常用于以下哪个基础服务的测试指标？
+    A. ASR <span class="right">正确</span>
+    B. TTS
+    C. NLU
+    D. VPR
+    第41题 得分：1
+    “首字节返回时间”常用于以下哪项服务的测试指标？通常情况下需要小于多少ms？
+    A. ASR，500
+    B. VPR，500
+    C. NLU，500
+    D. TTS，500 <span class="right">正确</span>
+    第42题 得分：1
+    以下哪些是NLU服务的测试指标？
+    A. 准确率 <span class="right">正确</span>
+    B. SER
+    C. 召回率 <span class="right">正确</span>
+    D. WER
+    第43题 得分：0
+    对于Speaker（用户声音画像识别），以下哪种解释是<span class="right">正确</span>的？
+    A. 用于获取说话人性别和年龄段信息 <span class="right">正确</span>
+    B. 用于验证说话人的身份 错误
+    C. 理解用户输入的文本, 转换为用户意图
+    D. 在NLU的基础上实现知识对话问答
+    第44题 得分：1
+    研究语音的时频分析特性，将时域语音信号经过傅里叶变换而得到的显示图形称为？
+    A. 语谱图 <span class="right">正确</span>
+    B. 波形图
+    C. 波束图
+    D. 倒谱图
+    第45题 得分：1
+    声学回声消除与硬件设备的结构有十分紧密的关系，良好的硬件设计可以让算法的性能得到有效保证，以下哪些因素是硬件结构设计中需要重点考量的量？
+    A. 良好的声学器件特性，如mic、喇叭在工作频段内具备十分良好的频响曲线； <span class="right">正确</span>
+    B. 结构设计应尽可能的避免谐波、震动等因素的干扰； <span class="right">正确</span>
+    C. 设备应该具备良好的密封性，减少内部声音传导； <span class="right">正确</span>
+    D. 拾音器的安装，不应该引入腔体等结构干扰； <span class="right">正确</span>
+    第46题 得分：0
+    在AEC处理中，通常需要在特定的SER下去量化比对性能，否则由于不同设备、不同播放内容、不同播放音量等因素，会导致比对的时候不在同一个维度上，这其中SER是指？
+    A. 句错误率 错误
+    B. 社会与环境责任
+    C. 信号回声比 <span class="right">正确</span>
+    D. 搜索引擎排名
+    第47题 得分：1
+    对于如下圆形麦克风阵列，下列哪个方向表示0度方向？
+    A. 图中A所示
+    B. 图中B所示
+    C. 图中C所示
+    D. 图中D所示 <span class="right">正确</span>
+    第48题 得分：1
+    SSP引擎中麦克风阵列声源定位会受哪些因素影响？
+    A. 信噪比 <span class="right">正确</span>
+    B. 房间混响 <span class="right">正确</span>
+    C. 送入引擎的信号顺序与引擎定义的麦克风顺序是否一致 <span class="right">正确</span>
+    D. 麦克风阵列失配误差 <span class="right">正确</span>
+    第49题 得分：1
+    麦克风阵列波束形成的主要作用是？
+    A. 消除设备自噪
+    B. 估计声源方位
+    C. 保留期望方向信号并抑制其他方向干扰和噪声 <span class="right">正确</span>
+    D. 防止音频削波、数据篡改、数据丢失
+    第50题 得分：1
+    SSP引擎中DOA实现的功能是？
+    A. 声源测向 <span class="right">正确</span>
+    B. 波束形成
+    C. 回声消除
+    D. 混响抑制
+    第51题 得分：0
+    SSP引擎要求麦克风位置误差不超过？
+    A. ±0.3mm 错误
+    B. ±1mm <span class="right">正确</span>
+    C. ±5mm
+</pre>
+</body>
