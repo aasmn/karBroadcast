@@ -1,20 +1,32 @@
 <!DOCTYPE html>
 
 <head>
+    <meta name="viewport"
+        content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <style>
+        body {
+            font-size: 18px;
+        }
+
         .right {
             color: red;
         }
 
         pre {
-            line-height: 16px;
+            line-height: 28px;
         }
 
         .search {
             position: fixed;
             top: 0;
             background: #fff;
+            width: 100%;
+        }
+
+        .search input {
+            line-height: 28px;
+            font-size: 18px;
         }
     </style>
 </head>
@@ -29,11 +41,11 @@
             var allStr = ans.innerHTML;
             var index = allStr.indexOf(str);
             if (index < 0) return;
-            document.body.scrollTop = 16 * allStr.substr(0, index).match(/\n/g).length - 50
+            document.body.scrollTop = 28 * allStr.substr(0, index).match(/\n/g).length - 100
 
         }
     </script>
-    <div class="search"><input id="sinput" onchange="onSearch()" /></div>
+    <div class="search"><input id="sinput" /><button onclick="onSearch()">查询</button></div>
     <pre id="ans">
     第2题 得分：1
     语音识别的简称是？
