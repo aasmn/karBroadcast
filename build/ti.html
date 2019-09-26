@@ -6,12 +6,35 @@
         .right {
             color: red;
         }
+
+        pre {
+            line-height: 16px;
+        }
+
+        .search {
+            position: fixed;
+            top: 0;
+            background: #fff;
+        }
     </style>
 </head>
 
 <body>
-    <pre>
+    <script>
+        function onSearch() {
+            var ipt = document.getElementById('sinput');
+            var ans = document.getElementById('ans');
+            var str = ipt.value;
+            if (!str) return;
+            var allStr = ans.innerHTML;
+            var index = allStr.indexOf(str);
+            if (index < 0) return;
+            document.body.scrollTop = 16 * allStr.substr(0, index).match(/\n/g).length - 50
 
+        }
+    </script>
+    <div class="search"><input id="sinput" onchange="onSearch()" /></div>
+    <pre id="ans">
     第2题 得分：1
     语音识别的简称是？
     A. ASR <span class="right">正确</span>
