@@ -44,8 +44,14 @@
             document.body.scrollTop = 28 * allStr.substr(0, index).match(/\n/g).length - 100
 
         }
+		function clearInput(){
+			var ipt = document.getElementById('sinput');
+			ipt.value = '';
+		}
+
+		
     </script>
-    <div class="search"><input id="sinput" /><button onclick="onSearch()">查询</button></div>
+    <div class="search"><input id="sinput" /><button onclick="onSearch()">查询</button><button onclick="clearInput()">清空</button></div>
     <pre id="ans">
     第2题 得分：1
     语音识别的简称是？
