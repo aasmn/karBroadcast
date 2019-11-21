@@ -2,15 +2,53 @@
 
 <head>
     <meta name="viewport"
-        content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+          content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no"/>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <style>
         body {
+            padding: 40px 0;
             font-size: 18px;
+            width: 100%;
+            height: 100%;
+        }
+
+        .searchBody {
+            width: 100%;
+            height: 100%;
+            -webkit-overflow-scrolling: auto;
         }
 
         .right {
             color: red;
+        }
+
+        button {
+            padding: 6px 20px;
+            border-radius: 5px;
+            outline-style: none;
+            margin-left: 10px;
+            background: cadetblue;
+            color: #fff;
+            font-weight: 600;
+            border: none;
+            outline: none;
+            -webkit-appearance: none;
+            -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+            box-shadow: 2px 2px 4px 0px grey;
+        }
+
+        input {
+            width: 30%;
+            outline-style: none;
+            border: 1px solid lightgray;
+            border-radius: 3px;
+            padding: 0 8px;
+            line-height: 14px;
+            color: #333;
+        }
+
+        button:active {
+            opacity: 0.8;
         }
 
         pre {
@@ -20,8 +58,10 @@
         .search {
             position: fixed;
             top: 0;
+            left: 20px;
             background: #fff;
             width: 100%;
+            padding: 10px 0;
         }
 
         .search input {
@@ -32,8 +72,9 @@
 </head>
 
 <body>
-    <script>
-        function onSearch() {
+<script>
+    function onSearch() {
+        setTimeout(function () {
             var ipt = document.getElementById('sinput');
             var ans = document.getElementById('ans');
             var str = ipt.value;
@@ -41,17 +82,27 @@
             var allStr = ans.innerHTML;
             var index = allStr.indexOf(str);
             if (index < 0) return;
-            document.body.scrollTop = 28 * allStr.substr(0, index).match(/\n/g).length - 100
+            if (document.body.scrollTop) {
+                document.body.scrollTop = 28 * allStr.substr(0, index).match(/\n/g).length - 100
+            } else {
+                document.documentElement.scrollTop = 28 * allStr.substr(0, index).match(/\n/g).length - 100
+            }
+        }, 0)
+    }
 
-        }
-		function clearInput(){
-			var ipt = document.getElementById('sinput');
-			ipt.value = '';
-		}
+    function clearInput() {
+        var ipt = document.getElementById('sinput');
+        ipt.value = '';
+    }
 
-		
-    </script>
-    <div class="search"><input id="sinput" /><button onclick="onSearch()">查询</button><button onclick="clearInput()">清空</button></div>
+
+</script>
+<div class='searchBody'>
+    <div class="search">
+        <input id="sinput"/>
+        <button onclick="onSearch()">查询</button>
+        <button onclick="clearInput()">清空</button>
+    </div>
     <pre id="ans">
     第2题 得分：1
     语音识别的简称是？
@@ -97,6 +148,12 @@
     B. 语音识别效果不好的 demo 或产品 <span class="right">正确</span>
     C. 错误的基本流程和情况
     D. 少量出问题的语音样例
+
+    以下不属于语音识别系统的模块的是？
+    A. 语义分析正确 <span class="right">正确</span>
+    B. 语言模型
+    C. 声学模型
+    D. 解码器
     第6题 得分：1
     关于ASR，字错误率不包含以下哪一种错误？
     A. 删除错误
@@ -121,6 +178,12 @@
     B. 引擎返回的识别结果中，除了识别出的文字结果，还包括配置参数，语音/静音情况，词边界等富文本信息
     C. 语言领域可以最多选择 5 个，比如车载设备的通用，导航，音乐，有声读物，个性化 错误
     D. 当前引擎对于快语速，重口音等极端情况，识别效果不佳
+
+    关于ASR，以下说法错误的是？
+    A. 速度方面，实时率越低越好
+    B. 字错误率越低越好
+    C. 相同背景和环境，同样数量的语音测试集，句子的平均字数越多时，句子错误率越低正确 <span class="right">正确</span>
+    D. 识别结果包括固定结果和可变结果
 
     第67题 得分：1
     为了优化语音识别的效果，产品开发人员可以做的是？
@@ -200,6 +263,12 @@
     C.	正确率
     D.	召回率
 
+    TTS MOS 评测含义是？
+    A. Mean Optional Score
+    B. Mean Opinion Score <span class="right">正确</span>
+    C. Mean Optional Selection
+    D. Mean Opinion Selection
+
     第15题 得分：1
     下面哪些会影响 TTS 的效果表现？
     A. 发音人音色 <span class="right">正确</span>
@@ -230,11 +299,24 @@
     B.	峰值周期的文字总数量 / 峰值周期 <span class="right">正确</span>
     C.	峰值周期／峰值周期的文字总数量
     D.	峰值周期／峰值周期的文字平均数量
+
     云知声目前 TTS 支持的语种包括？
     A.	中文 <span class="right">正确</span>
     B.	英文 <span class="right">正确</span>
     C.	日文
     D.	韩文
+
+    云知声目前已有的 TTS 音色包括？
+    A. 男声 <span class="right">正确</span>
+    B. 女声 <span class="right">正确</span>
+    C. 男童声 <span class="right">正确</span>
+    D. 女童声 <span class="right">正确</span>
+
+    目前云知声支持多少句语音的个性化 TTS 定制？
+    A. 20 句 <span class="right">正确</span>
+    B. 50 句 <span class="right">正确</span>
+    C. 300 句 <span class="right">正确</span>
+    D. 1000 句 <span class="right">正确</span>
 
     合成语音质量的评价方法是？
     A.	人对语音质量进行主观评价 <span class="right">正确</span>
@@ -269,11 +351,29 @@
     C.	声纹识别 <span class="right">正确</span>
     D.	语音合成
 
+    关于声纹识别，下列说话正确的是？
+    A. 在声纹识别时，识别语音与原声纹注册时使用的语音不属于同一个人，则识别时使用的语音为冒认语音 <span class="right">正确</span>
+    B. 在声纹识别时，识别语音与原声纹注册时使用的语音属于同一个人，则识别时使用的语音为冒认语音
+    C. 在声纹识别时，识别语音与原声纹注册时使用的语音不属于同一个人，则识别时使用的语音为目标说话人语音
+    D. 在声纹识别时，识别语音与原声纹注册时使用的语音属于同一个人，则识别时使用的语音为目标说话人语音 <span class="right">正确</span>
+
+    声纹识别性能指标——集外拒绝准确率计算公式是？
+    A. 冒认语音做测试时被判断为真的次数 / 用冒认语音做测试的总次数
+    B. 目标说话人语音做测试时被判断为假的次数 / 目标说话人语音做测试的总次数
+    C. 测试语音属于目标说话人集合中的说话人且识别结果正确的次数 / 测试语音属于目标说话人集合的测试总次数
+    D. 测试语音不属于目标说话人集合中的说话人且识别结果正确的次数 / 测试语音不属于目标说话人集合的测试总次数 <span class="right">正确</span>
+
     声纹识别性能指标——漏警计算公式是？
     A.	冒认语音做测试时被判断为真的次数 / 用冒认语音做测试的总次数
     B.	目标说话人语音做测试时被判断为假的次数 / 用目标说话人语音做测试的总次数 <span class="right">正确</span>
     C.	测试语音属于目标说话人集合中的说话人且识别结果正确的次数 / 测试语音属于目标说话人集合的测试总次数
     D.	测试语音不属于目标说话人集合中的说话人且识别结果正确的次数 / 测试语音不属于目标说话人集合的测试总次数
+
+    测试人员 A 和B正在进行某 APP 声纹锁体验测试，A 使用自己的语音完成声纹注册后B尝试进行声纹登录，共尝试 20 次，其中成功登录 1 次，请问在该次体验测试中，该声纹锁的虚警为？
+    A. 20
+    B. 1
+    C. 0.95
+    D. 0.05 <span class="right">正确</span>
 
     关于声纹识别，下列说法正确的是？
     A.	说话人刻意改变音调不会对声纹识别性能造成影响
@@ -293,6 +393,18 @@
     B.	对语音进行 opus 压缩会对声纹识别性能造成影响 <span class="right">正确</span>
     C.	在对语音进行 opus 压缩时，压缩比越高，音频质量损失越多，声纹识别性能越差 <span class="right">正确</span>
     D.	在对语音进行 opus 压缩时，压缩比越高，音频质量损失越少，声纹识别性能越好
+
+    关于声纹识别，下列说法正确的是？
+    A. 在噪声环境下，只要能听清语音内容，则该噪声不会影响声纹识别性能
+    B. 相同的信噪比，人声背景噪声比空调噪声对声纹识别性能影响更大 <span class="right">正确</span>
+    C. 只要音量足够大，mic 品质对声纹识别性能没有影响
+    D. 声纹识别性能不受说话人发声状态影响
+
+    下列哪些统计量是声纹识别性能衡量指标？
+    A. 虚警 <span class="right">正确</span>
+    B. 漏警 <span class="right">正确</span>
+    C. 字错误率
+    D. 句错误率
     
     关于声纹识别，下列说法正确的是？
     A. 说话人离 mic 距离不会影响声纹识别性能
@@ -366,6 +478,18 @@
     B.	在对语音进行 opus 压缩时，压缩比越高，音频质量损失越少，用户声音画像识别性能越好
     C.	对语音进行 opus 压缩不会对用户声音画像识别性能造成影响
     D.	对语音进行 opus 压缩会对用户声音画像识别性能造成影响  <span class="right">正确</span>
+
+    关于Speaker，下列说法正确的是？
+    A. 用户声音画像识别是指计算机通过说话人的语音，识别出说话人的性别和年龄段的技术 <span class="right">正确</span>
+    B. 用户声音画像识别是指计算机通过说话人的语音，识别出说话人身份的技术
+    C. 用户声音画像识别是指计算机通过说话人的语音，识别出说话人长相的技术
+    D. 用户声音画像识别是指计算机通过说话人的语音，识别出说话人情感状态的技术
+
+    关于Speaker，下列说法正确的是？
+    A. 在对语音进行 opus 压缩时，压缩比越高，音频质量损失越多，用户声音画像识别性能越差 <span class="right">正确</span>
+    B. 在对语音进行 opus 压缩时，压缩比越高，音频质量损失越少，用户声音画像识别性能越好
+    C. 对语音进行 opus 压缩不会对用户声音画像识别性能造成影响
+    D. 对语音进行 opus 压缩会对用户声音画像识别性能造成影响 <span class="right">正确</span>
 
     第29题 得分：1
     用户声音画像识别引擎实时率计算公式是？
@@ -459,7 +583,8 @@
     A. 一个意图的召回率越高，体验越好；
     B. 一个意图的精确率越高，体验越好；
     C. F-Score同时兼顾了召回率和精确率，因此，F-Score越高代表NLU的体验越好； <span class="right">正确</span>
-    D. 一个意图的召回率和精确率的重要程度可以不同。家居控制意图的精确率比召回率更重要。因为一旦误召回，会产生比较严重的后果(e.g. 一句话误理解为空调制冷有可能导致用户感冒)； <span class="right">正确</span>
+    D. 一个意图的召回率和精确率的重要程度可以不同。家居控制意图的精确率比召回率更重要。因为一旦误召回，会产生比较严重的后果(e.g. 一句话误理解为空调制冷有可能导致用户感冒)； <span
+            class="right">正确</span>
     第38题 得分：1
     如果你是一个AI产品经理，如何确保你产品已经上线的NLU功能表现基本稳定，而不出致命错误？
     A. 提测试需求给测试团队，建立SanityTest，覆盖最基础、重要、不允许出错的功能； <span class="right">正确</span>
@@ -481,11 +606,27 @@
     C.	技能开发是个动态的过程，包含冷启动和在线运营两个阶段。有了真实日志语料以后，技能的持续在线更新运营会变得更加容易，投入产出比更高。 <span class="right">正确</span>
     D.	技能开发时，关键词和模板句式实施没有科技含量，没有理论依据，不如时下流行的深度学习好用，编辑模板是个体力活，应该废弃掉。
 
+    以儿童陪伴和教育场景为例，受3~6岁欢迎的语音交互技能应该具备哪些好的特征？
+    A. 语音友好性：语音交互的说法，容易说出口，识别率高，不容易出错，没有奇异性。 <span class="right">正确</span>
+    B. 寓教于乐：有知识教育性、有竞赛娱乐性。 <span class="right">正确</span>
+    C. 简单性：内容简单，最好是现实生活中就有的客观常见需求；内容不过于复杂高深，不过多超越儿童的知识储备。 <span class="right">正确</span>
+    D. 个性化：能够根据小朋友的个性化需求和信息，进行交互。比如，在应答中偶尔说出小朋友的名字。 <span class="right">正确</span>
+    E. 难度高：难度越高，越能体现技能的高超水平，越能收到小朋友的欢迎
+
+    关于如何定位是否为NLU的问题，下面做法正确的是？
+    A. 怀疑是NLU的问题，直接甩给NLU，让NLU的人定位排查。
+    B. 终端服务测试时，返回结果有问题：有URL的，可先用URL测，若URL返回结果与终端返回不一致，则查日志，判断是否为NLU问题；若URL返回结果与终端一致，则可判定为NLU问题 <span
+            class="right">正确</span>
+    C. 当出现没有应答、进入不了多轮对话的情况时，先确认是否打开了对话开关 <span class="right">正确</span>
+    D. 当某服务测试用例都测试不通过时，先确认测试appkey是否配置了该服务，场景参数是否正确 <span class="right">正确</span>
+
     关于NLU协议的协议变更和版本升级，下面说法正确的是？
     A.	随着智能语音产业的深入发展，NLU协议设计者对于产品交互的理解深刻，适当时候需要与时俱进，为产品提供更合理的NLU协议格式和内容。 <span class="right">正确</span>
     B.	NLU URL中的ver字段表示NLU的协议版本号。协议设计应合理谨慎并具有充分的前瞻性，尽量减少未来的协议变更或版本升级。 <span class="right">正确</span>
-    C.	对于已经发布且被产品接入了的协议，NLU开发者需要保证其协议的稳定性。如果协议更改代价过高，需要升级协议版本号，以发布更合理的NLU协议，并对老版本协议向下兼容。 <span class="right">正确</span>
-    D. NLU协议变更流程： 该技能负责人发起变更申请钉钉流程 -> NLU团队架构师同意 -> 所有产品主线产品经理同意 -> 所有产品主线SA同意-> 协议变更发布 -> 产品验证 -> 更新协议文档 -> 协议更新发布到技能平台。 <span class="right">正确</span>
+    C.	对于已经发布且被产品接入了的协议，NLU开发者需要保证其协议的稳定性。如果协议更改代价过高，需要升级协议版本号，以发布更合理的NLU协议，并对老版本协议向下兼容。 <span
+            class="right">正确</span>
+    D. NLU协议变更流程： 该技能负责人发起变更申请钉钉流程 -> NLU团队架构师同意 -> 所有产品主线产品经理同意 -> 所有产品主线SA同意-> 协议变更发布 -> 产品验证 -> 更新协议文档 -> 协议更新发布到技能平台。 <span
+            class="right">正确</span>
 
     关于NLU请求中的场景参数(scenario)，下面说法正确的是？
     A.	<span class="right">正确</span>场景参数(scenario)，是指对话交互场景，是一个交互态的概念。Scenario参数通过影响技能关联、技能排序、有风格的交互数据、交互流程，来实现对对话交互的影响 正确
@@ -493,6 +634,12 @@
     C.	<span class="right">正确</span>除了方案级scenario参数，scenario还可以取值为单个技能的serviceCode, 以实现表示沉浸式的在该技能内进行交互。如：翻译场景、打电话场景 正确
     D.	<span class="right">正确</span>scenario参数可以留空。
     E.	scenario参数可以随便填入，不用特别严谨
+
+    “末次返回延迟”常用于以下哪项服务的测试指标？通常情况下需要小于多少ms？
+    A. ASR，500 <span class="right">正确</span>
+    B. VPR，500
+    C. NLU，500
+    D. TTS，500
 
 
     统计WER结果时，所统计的错误类型一般包括以下哪些？
@@ -529,6 +676,11 @@
 
     -----------------NLU END---------
 
+    AEC在SSP引擎中所起的作用主要是？
+    A. 环境噪声干扰抑制
+    B. 房间混响抑制
+    C. 说话人测向
+    D. 声学回声消除 <span class="right">正确</span>
    
     第44题 得分：1
     研究语音的时频分析特性，将时域语音信号经过傅里叶变换而得到的显示图形称为？
@@ -563,6 +715,12 @@
     B. 社会与环境责任
     C. 信号回声比 <span class="right">正确</span>
     D. 搜索引擎排名
+
+    麦克风阵列处理相对于单麦克风的主要优势是什么？
+    A.迎合市场需求，本身并没有太大作用；
+    B.仅能实现声源测向功能，其他无明显优势；
+    C. 仅能改善远场使用场景下的拾音质量，其他无明显优势；
+    D.相对于单麦克风处理，能够更好的去除混响、环境噪声，并能够实现单麦克风所不能实现的声源测向，定向拾音等功能，且能在远场场景下显著改善拾音质量； <span class="right">正确</span>
 
     以下关于麦克风阵列的间距、拓扑结构的说法，正确的是？
     A. 麦克风阵列的间距、拓扑结构对于处理性能、DOA准确率等会造成明显影响，需要在产品设计之初就结合引擎建议及项目实施经验，仔细考量； <span class="right">正确</span>
@@ -642,8 +800,11 @@
     C.	目标信号和噪声信号能量相等； <span class="right">正确</span>
     D. 噪声信号采音值为0dB；
 
-
-    
+    对于NLU（自然语言理解），以下哪种解释是正确的？
+    A. 用于获取说话人性别和年龄段信息
+    B. 用于验证说话人的身份
+    C. 理解用户输入的文本, 转换为用户意图  <span class="right">正确</span>
+    D. 在NLU的基础上实现知识对话问答
 
     对于测试报告的注意事项，以下哪些说法是正确的？
     A.	测试报告中使用的数据、工具、文档等资源都有唯一的ID来标识 <span class="right">正确</span>
@@ -665,4 +826,5 @@
 
 
 </pre>
+</div>
 </body>
